@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP2ProgOutil", "TP2ProgOutil.csproj", "{B352417C-C619-1AEF-BECD-51D9254C8191}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP2ProgOutil.Editor", "TP2ProgOutil.Editor.csproj", "{63F9300F-A015-B03B-2F39-8A13C5A94F9E}"
@@ -24,8 +22,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {560E4A3B-5DB0-43AF-A4B7-C52D03A46705}
 	EndGlobalSection
 EndGlobal

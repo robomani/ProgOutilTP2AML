@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class EnvironmentEditor : MonoBehaviour {
+[CustomEditor(typeof(Environment))]
+public class EnvironmentEditor : Editor 
+{
+    private Environment m_Environment;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-	// Pour Afficher l'inspecteur par defaut sauf certains parametres, veuillez utiliser DrawPropertiesExcluding(serailizedObject, "m_MyVariable");
+    private void OnEnable()
+    {
+
+    }
+
+    public override void OnInspectorGUI()
+    {
+
+        //serializedObject.ApplyModifiedProperties;
+    }
+
+    // Pour Afficher l'inspecteur par defaut sauf certains parametres, veuillez utiliser DrawPropertiesExcluding(serailizedObject, "m_MyVariable");
 }
