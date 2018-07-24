@@ -35,6 +35,7 @@ public class ObjectCreator : EditorWindow
     private bool m_UseLocalRotation;
     private GameObject m_CustomObject = null;
     private bool m_Custom;
+    private List<GameObject> m_Instanciated;
 
     public void OnGUI()
     {
@@ -57,6 +58,7 @@ public class ObjectCreator : EditorWindow
         if (GUILayout.Button("Use Custom Object"))
         {
             m_Custom = !m_Custom;
+            m_CustomObject = null;
         }
         if (m_Custom)
         {
@@ -100,6 +102,7 @@ public class ObjectCreator : EditorWindow
                 if (m_CustomObject != null)
                 {
                     CreatedObject = Instantiate(m_CustomObject);
+
                 }
                 else
                 {
@@ -110,8 +113,8 @@ public class ObjectCreator : EditorWindow
 
                 Vector3 temp;
 
-                temp = m_StartPosition == null ? Vector3.zero : m_StartPosition.position;  
-                
+                temp = m_StartPosition == null ? Vector3.zero : m_StartPosition.position;
+
                 switch (m_DirectionToSpawn)
                 {
                     case Direction.Up:
@@ -149,10 +152,12 @@ public class ObjectCreator : EditorWindow
                 }
                 if (m_UseColor)
                 {
-                    CreatedObject.GetComponent<Renderer>().material.color = Color.Lerp(m_StartColor, m_EndColor, ((float)i /(m_NumberToCreate-1)));
+                    CreatedObject.GetComponent<Renderer>().material.color = Color.Lerp(m_StartColor, m_EndColor, ((float)i / (m_NumberToCreate - 1)));
                 }
-            }                
+            }
+            Selection.activeGameObject = Parent;
         }
+        
         GUI.color = Color.white;
 
         //Undo.RegisterCreatedObjectUndo( , "UndoCreatedObject");
